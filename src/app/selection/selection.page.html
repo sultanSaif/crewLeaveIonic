@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>selection</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let month of months" (click)="monthClicked(month)">
+      <ion-label>{{ month }}</ion-label>
+      <ion-badge
+        slot="end"
+        color="danger"
+        *ngIf="selectionArray.indexOf(month) > -1"
+        >{{ selectionArray.indexOf(month) + 1 }}</ion-badge
+      >
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" (click)="submitLeave()">Submit Leave</ion-button>
+</ion-content>

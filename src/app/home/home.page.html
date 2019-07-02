@@ -1,14 +1,41 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Crew Leave
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <img
+    class="img"
+    src="https://ui-avatars.com/api/?size=256&background=0D8ABC&color=fff&rounded=true&name=sultan+khan"
+  />
+  <!-- <ion-avatar> </ion-avatar> -->
+  <h1 style="text-align:center">{{ crewName }}</h1>
+  <div class="center">
+    <ion-chip>
+      <ion-icon name="person"></ion-icon>
+      <ion-label>{{ rank }}</ion-label>
+    </ion-chip>
+    <ion-chip>
+      <ion-icon name="airplane"></ion-icon>
+      <ion-label>{{ equipment }}</ion-label>
+    </ion-chip>
+    <ion-chip>
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>{{ seniorityDate }}</ion-label>
+    </ion-chip>
   </div>
+
+  <ion-button *ngIf="selectionArray" (click)="presentSelection()" expand="block"
+    >View Leave Selection</ion-button
+  >
+
+  <ion-button
+    *ngIf="!selectionArray"
+    (click)="presentSelection()"
+    expand="block"
+    >Submit Leave Selection</ion-button
+  >
 </ion-content>
